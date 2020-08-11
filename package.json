@@ -1,0 +1,24 @@
+{
+  "name": "ioc-inversify",
+  "version": "1.0.0",
+  "description": "An inversion of control POC using inversify and Typescript",
+  "main": "app.ts",
+  "scripts": {
+    "start": "ts-node app.ts",
+    "watch": "nodemon"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "inversify": "^5.0.1",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.7",
+    "@types/node": "^14.0.27",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  },
+  "author": "Alejandro Marr",
+  "license": "ISC"
+}
