@@ -1,6 +1,5 @@
 interface RepositoryInterface<T> {
-  getPosts(): T[];
-  save(post: T): T;
+  save(entitiy: T): T;
 }
 
 export default RepositoryInterface;
