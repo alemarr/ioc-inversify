@@ -1,10 +1,10 @@
 import { injectable } from 'inversify';
 
-import DatabaseStorage from '../../domain/database/database-storage';
+import DatabaseStorage from './database-storage';
 
 @injectable()
 class MemoryStorage implements DatabaseStorage {
-  private _storage: any[];
+  private readonly _storage: any[];
   
   constructor() {
     this._storage = [];

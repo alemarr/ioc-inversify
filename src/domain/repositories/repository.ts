@@ -1,5 +1,5 @@
 interface RepositoryInterface<T> {
-  save(entitiy: T): T;
+  save(entity: T): T;
 }
 
 export default RepositoryInterface;

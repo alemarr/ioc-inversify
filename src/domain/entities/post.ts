@@ -1,7 +1,7 @@
 class Post {
-  private _id: number | undefined;
-  private _title: string;
-  private _description: string;
+  private readonly _id: number | undefined;
+  private readonly _title: string;
+  private readonly _description: string;
 
   constructor(title: string, description: string, id?: number){
     this._title = title;
