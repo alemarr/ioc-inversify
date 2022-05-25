@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import PostRepositoryInterface from '../../../../src/domain/repositories/post-repostitory';
+import PostRepositoryInterface from '../../../../src/domain/repositories/post-repostitory.interface';
 import Post from '../../../../src/domain/entities/post';
 import LoggerInterface from '../../../../src/infrastructure/services/logger/logger.interface';
 import PostRepository from '../../../../src/infrastructure/repositories/post-repository';
@@ -7,7 +7,7 @@ import PostServiceInterface from '../../../../src/domain/services/post-service.i
 import PostService from '../../../../src/domain/services/post-service';
 import MemoryStorage from '../../../../src/infrastructure/database/memory-storage';
 import ConsoleLogger from '../../../../src/infrastructure/services/logger/console-logger';
-import DatabaseStorage from '../../../../src/infrastructure/database/database-storage';
+import DatabaseStorage from '../../../../src/infrastructure/database/database-storage.interface';
 
 jest.mock('../../../../src/infrastructure/repositories/post-repository');
 jest.mock('../../../../src/infrastructure/services/logger/console-logger');

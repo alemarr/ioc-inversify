@@ -1,8 +1,6 @@
 import Post from "../entities/post";
 
-interface PostServiceInterface {
+export default interface PostServiceInterface {
   getPosts(): Post[];
   create(title: string, description: string): Post;
 }
-
-export default PostServiceInterface;

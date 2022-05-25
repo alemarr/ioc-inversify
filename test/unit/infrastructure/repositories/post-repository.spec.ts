@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import MemoryStorage from "../../../../src/infrastructure/database/memory-storage";
 import PostRepository from "../../../../src/infrastructure/repositories/post-repository";
-import PostRepositoryInterface from "../../../../src/domain/repositories/post-repostitory";
+import PostRepositoryInterface from "../../../../src/domain/repositories/post-repostitory.interface";
 import Post from "../../../../src/domain/entities/post";
 
 describe('In-memory storage', () => {

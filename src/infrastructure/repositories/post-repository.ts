@@ -1,13 +1,13 @@
 import { injectable, inject } from 'inversify';
 
-import DatabaseStorage from '../database/database-storage';
 import Post from '../../domain/entities/post';
-import PostRepositoryInterface from "../../domain/repositories/post-repostitory";
+import PostRepositoryInterface from "../../domain/repositories/post-repostitory.interface";
 import TYPES from '../../application/constants/types';
+import DatabaseStorageInterface from "../database/database-storage.interface";
 
 @injectable()
-class PostRepository<T extends Post> implements PostRepositoryInterface<Post> {
-  constructor(@inject(TYPES.DatabaseStorage) private readonly _db: DatabaseStorage) { }
+export default class PostRepository<T extends Post> implements PostRepositoryInterface<Post> {
+  constructor(@inject(TYPES.DatabaseStorage) private readonly _db: DatabaseStorageInterface) { }
 
   save(post: T): Post {
     const record = this._db.insert({
@@ -19,10 +19,8 @@ class PostRepository<T extends Post> implements PostRepositoryInterface<Post> {
 
   getPosts(): Post[] {
     const posts = this._db.fetchAll();
-    return posts.map(post => {
+    return posts.map((post: { title: string, description:string, id: number}) => {
       return new Post(post.title, post.description, post.id);
     });
   }
 }
-
-export default PostRepository;

@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import DatabaseStorage from "../../../../src/infrastructure/database/database-storage";
+import DatabaseStorage from "../../../../src/infrastructure/database/database-storage.interface";
 import MemoryStorage from "../../../../src/infrastructure/database/memory-storage";
 
 type PostRecord = {

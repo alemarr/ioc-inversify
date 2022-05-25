@@ -1,4 +1,4 @@
-class Post {
+export default class Post {
   private readonly _id: number | undefined;
   private readonly _title: string;
   private readonly _description: string;
@@ -21,5 +21,3 @@ class Post {
     return this._description;
   }
 }
-
-export default Post;

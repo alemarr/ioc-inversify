@@ -1,9 +1,9 @@
 import { injectable } from 'inversify';
 
-import DatabaseStorage from './database-storage';
+import DatabaseStorageInterface from "./database-storage.interface";
 
 @injectable()
-class MemoryStorage implements DatabaseStorage {
+export default class MemoryStorage implements DatabaseStorageInterface {
   private readonly _storage: any[];
   
   constructor() {
@@ -24,5 +24,3 @@ class MemoryStorage implements DatabaseStorage {
     return this._storage;
   }
 }
-
-export default MemoryStorage;

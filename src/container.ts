@@ -2,8 +2,8 @@ import { Container } from 'inversify';
 
 import TYPES from './application/constants/types';
 import PostServiceInterface from './domain/services/post-service.interface';
-import PostRepositoryInterface from './domain/repositories/post-repostitory';
-import DatabaseStorage from './infrastructure/database/database-storage';
+import PostRepositoryInterface from './domain/repositories/post-repostitory.interface';
+import DatabaseStorage from './infrastructure/database/database-storage.interface';
 import LoggerInterface from "./infrastructure/services/logger/logger.interface";
 import Post from './domain/entities/post';
 
