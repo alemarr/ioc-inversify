@@ -15,14 +15,13 @@ export default class PostService implements PostServiceInterface {
   }
 
   getPosts(): Post[] {
-    const posts = this._repository.getPosts();
-    return posts;
+    return this._repository.getPosts();
   }
 
   create(title: string, description: string): Post {
     const post = this._repository.save(new Post(title, description));
 
-    this._logger.info(`[PostService] Created new post with id ${post.getId()}`);
+    this._logger.info(`[PostService] Created new post with id ${post.id()}`);
 
     return post;
   }

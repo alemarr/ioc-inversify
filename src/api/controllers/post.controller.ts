@@ -10,28 +10,28 @@ import { CreatePostRequest } from "../../application/requests/create-post.reques
 @controller('/posts')
 export class PostController implements interfaces.Controller {
 
-    constructor(@inject(TYPES.PostService) private readonly postService: PostServiceInterface) {}
+    constructor(@inject(TYPES.PostService) private readonly _postService: PostServiceInterface) {}
 
     @httpPost('/')
-    private async create(@requestBody() body: CreatePostRequest, @response() res: Response): Promise<Response> {
-        const post = this.postService.create(body.title, body.description);
+    private create(@requestBody() body: CreatePostRequest, @response() res: Response): Response {
+        const post = this._postService.create(body.title, body.description);
 
         return res.json({
-            id: post.getId(),
-            title: post.getTitle(),
-            description: post.getDescription()
+            id: post.id(),
+            title: post.title(),
+            description: post.description()
         });
     }
 
     @httpGet('/')
     private list(@request() req: Request, @response() res: Response): Response {
-        const posts = this.postService.getPosts();
+        const posts = this._postService.getPosts();
 
         return res.json(posts.map((post: Post) => {
             return {
-              id: post.getId(),
-              title: post.getTitle(),
-              description: post.getDescription()
+              id: post.id(),
+              title: post.title(),
+              description: post.description()
             }
         }));
     }

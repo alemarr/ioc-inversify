@@ -9,15 +9,15 @@ export default class Post {
     this._id = id;
   }
 
-  public getId(): number|undefined {
+  public id(): number|undefined {
     return this._id;
   }
 
-  public getTitle(): string {
+  public title(): string {
     return this._title;
   }
 
-  public getDescription(): string {
+  public description(): string {
     return this._description;
   }
 }

@@ -11,8 +11,8 @@ export default class PostRepository<T extends Post> implements PostRepositoryInt
 
   save(post: T): Post {
     const record = this._db.insert({
-      title: post.getTitle(),
-      description: post.getDescription()
+      title: post.title(),
+      description: post.description()
     });
     return new Post(record.title, record.description, record.id);
   }

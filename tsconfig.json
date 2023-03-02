@@ -5,7 +5,7 @@
       "types": ["reflect-metadata", "jest"],
       "module": "commonjs",
       "rootDir": "./src",
-      "outDir": ".dist/",
+      "outDir": "./dist/",
       "strict": true,
       "removeComments": true,
       "strictPropertyInitialization": false,
@@ -16,7 +16,10 @@
       "noEmit": true
   },
   "exclude": [ 
-    "./node_modules" 
+    "./node_modules",
+    "./dist",
+    "jest.config.js",
+    "test"
   ],
   "include": [
     "./src"
